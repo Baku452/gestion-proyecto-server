@@ -20,7 +20,7 @@ const port = process.env.PORT || 4000;
 //IMportar rutas
 app.use('/api/usuarios', require('./routes/usuarios'));
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/proyectos', require('./routes/proyectos'));
+// app.use('/api/proyectos', require('./routes/proyectos'));
 app.use('/api/tareas', require('./routes/tareas'));
 
 
