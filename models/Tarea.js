@@ -6,6 +6,9 @@ const TareaSchema = mongoose.Schema({
         required: true,
         trim: true
     },
+    snip: {
+        type: String,
+    },
     codDNPP: {
         type: String,
     },
