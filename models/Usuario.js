@@ -7,6 +7,12 @@ const UsuariosSchema = mongoose.Schema({
         required:true,
         trim: true
     },
+    rol: {
+        type: String,
+        required: true,
+        trim: true,
+        default: "editor"
+    },
     email: {
         type: String,
         required:true,
