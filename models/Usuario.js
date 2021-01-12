@@ -9,9 +9,9 @@ const UsuariosSchema = mongoose.Schema({
     },
     rol: {
         type: String,
-        required: true,
+        required:true,
         trim: true,
-        default: "editor"
+        default: 'editor'
     },
     email: {
         type: String,

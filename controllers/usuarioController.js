@@ -59,7 +59,6 @@ exports.obtenerUsuarios = async (req, res) => {
 
     try {
         const usuarios = await Usuario.find();
-        console.log(usuarios);
         res.json({usuarios})
 
     } catch (error) {
@@ -67,4 +66,20 @@ exports.obtenerUsuarios = async (req, res) => {
         res.status(500).send('Hubo un error')
     }
 
+}
+
+exports.eliminarUsuario = async (req,res) =>{
+    try {
+        let usuarioExiste = await Usuario.findById(req.params.id);
+
+        if(!usuarioExiste){
+            return res.status(404).json({msg: 'No existe usuario'});
+        }
+
+        await Usuario.findOneAndRemove({_id: req.params.id});
+        res.json({msg: 'Usuario Eliminado'})
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Hubo un errro')
+    }
 }

@@ -16,8 +16,16 @@ router.post('/',
     usuarioController.crearUsuario
 );
 
+//Obtener los usuarios
 router.get('/', 
     auth,
     usuarioController.obtenerUsuarios
 );
+
+//Eliminar Usuarios
+router.delete('/:id',
+    auth,
+    usuarioController.eliminarUsuario
+
+)
 module.exports = router;
